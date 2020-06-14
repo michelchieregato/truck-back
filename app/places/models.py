@@ -20,6 +20,9 @@ class Service(models.Model):
     name = models.CharField(max_length=100)
     service_type = models.SmallIntegerField(choices=TYPES_OF_SERVICE)
 
+    def __str__(self):
+        return '{} of type {}'.format(self.name, self.service_type)
+
 
 class Place(models.Model):
 
@@ -36,7 +39,7 @@ class Place(models.Model):
     longitude = models.FloatField()
     rating = models.SmallIntegerField(choices=STARS)
     address = models.CharField(max_length=200)
-    services = models.ManyToManyField(Service)
+    services = models.ManyToManyField(Service, blank=True)
 
     def __str__(self):
         return self.name
