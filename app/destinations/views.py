@@ -24,7 +24,7 @@ class DestinationViewSet(viewsets.GenericViewSet,
         is_favorite = self.request.query_params.get('is_favorite', None)
         if is_favorite is not None:
             return self.queryset.filter(user=self.request.user.id, is_favorite=True).order_by('-created_at')
-        return self.queryset.filter(user=self.request.user.id).order_by('-name')
+        return self.queryset.filter(user=self.request.user.id).order_by('-created_at')
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
