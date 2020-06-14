@@ -10,23 +10,9 @@ class UserSerializer(serializers.ModelSerializer):
     Serializer for the User model.
     """
 
-    PASSWORD_VERIFICATION = '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])'
-
     class Meta:
         model = get_user_model()
-        fields = ['email', 'password', 'name']
-        extra_kwargs = {
-            'password': {
-                'write_only': True,
-                'min_length': 6
-            }
-        }
-
-    def validate_password(self, value):
-        password_match = re.compile(self.PASSWORD_VERIFICATION)
-        if password_match.search(value):
-            return value
-        raise serializers.ValidationError('Your password must match the security requirements')
+        fields = ['email', 'password', 'name', 'phone']
 
     def create(self, validated_data):
         """

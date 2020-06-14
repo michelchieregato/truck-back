@@ -41,8 +41,6 @@ class UserPrivateView(generics.RetrieveUpdateAPIView):
     For now, they only can access and edit their own information.
     """
     serializer_class = UserSerializer
-    authentication_classes = (authentication.TokenAuthentication,)
-    permission_classes = (permissions.IsAuthenticated,)
 
     def get_object(self):
         return self.request.user
