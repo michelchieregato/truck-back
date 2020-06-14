@@ -47,6 +47,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_superuser = models.BooleanField(default=False, help_text='Designates whether the user can delete and create objects in admin site.')
     is_active = models.BooleanField(default=True, help_text='Designates whether this user should be treated as active. '
                                                             'Unselect this instead of deleting accounts.')
+    points = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
