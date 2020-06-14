@@ -30,7 +30,8 @@ class CreateTokenView(ObtainAuthToken):
         token = Token.objects.get(key=response.data['token'])
         response.data['user'] = {
             'name': token.user.name,
-            'email': token.user.email
+            'email': token.user.email,
+            'phone': token.user.phone
         }
         return response
 
