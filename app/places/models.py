@@ -1,5 +1,8 @@
 from django.db import models
 
+from user.models import User
+from project import settings
+
 
 class Service(models.Model):
 
@@ -44,4 +47,11 @@ class Place(models.Model):
     def __str__(self):
         return self.name
 
-# Create your models here.
+
+class Comment(models.Model):
+    comment = models.CharField(max_length=255)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    place = models.ForeignKey(Place, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.place.name
