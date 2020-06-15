@@ -43,6 +43,7 @@ class Place(models.Model):
     rating = models.SmallIntegerField(choices=STARS)
     address = models.CharField(max_length=200)
     services = models.ManyToManyField(Service, blank=True)
+    image_name = models.CharField(max_length=255, null=True)
 
     def __str__(self):
         return self.name

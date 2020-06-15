@@ -15,6 +15,6 @@ class PlaceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Place
-        fields = ['name', 'rating', 'address', 'services']
+        fields = ['name', 'rating', 'address', 'services', 'image_name']
         read_only_fields = ()
 

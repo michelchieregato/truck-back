@@ -9,17 +9,19 @@ places = [
             'latitude': -23.350396,
             'longitude': -46.797085,
             'rating': 3,
-            'address': 'Rod. dos Bandeirantes, s/n - KM 34 - Calcário, Caieiras - SP, 07700-000'
+            'address': 'Rod. dos Bandeirantes, s/n - KM 34 - Calcário, Caieiras - SP, 07700-000',
+            'image_name': 'frango-frito.png'
         },
         'services': [3]
     },
     {
         'data': {
-            'name': 'Posto CCR Campeão',
+            'name': 'Serviço de Atendimento ao Usuário CCR',
             'latitude': -23.117731,
             'longitude': -46.989539,
             'rating': 5,
-            'address': 'Rodovia dos Bandeirantes, Km 68,5 s/n - Jardim Ermida II, SP, 13212-195'
+            'address': 'Rodovia dos Bandeirantes, Km 68,5 s/n - Jardim Ermida II, SP, 13212-195',
+            'image_name': 'sau.png'
         },
         'services': [2, 3, 4]
     },
@@ -29,7 +31,8 @@ places = [
             'latitude': -22.871536,
             'longitude': -45.288596,
             'rating': 2,
-            'address': '3192, Rod. Pres. Dutra, 1804, Roseira - SP, 12580-000'
+            'address': '3192, Rod. Pres. Dutra, 1804, Roseira - SP, 12580-000',
+            'image_name': 'posto-policia.png'
         },
         'services': [5]
     },
@@ -39,7 +42,8 @@ places = [
             'latitude': -23.532878,
             'longitude': -46.688901,
             'rating': 4,
-            'address': 'R. Barão do Bananal, 1111 - Pompeia, São Paulo - SP, 05024-000'
+            'address': 'R. Barão do Bananal, 1111 - Pompeia, São Paulo - SP, 05024-000',
+            'image_name': 'casa-saude.png'
         },
         'services': [1]
     }
@@ -57,7 +61,7 @@ def create_places(apps, schema_editor):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('places', '0005_auto_20200614_2249'),
+        ('places', '0006_place_image_name'),
     ]
 
     operations = [
