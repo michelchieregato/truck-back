@@ -15,7 +15,6 @@ class DestinationViewSet(viewsets.GenericViewSet,
                          mixins.CreateModelMixin,
                          filters.BaseFilterBackend):
     authentication_classes = (TokenAuthentication,)
-    # permission_classes = (IsAuthenticated,)
     queryset = Destination.objects.all()
     serializer_class = serializers.DestinationSerializer
 
